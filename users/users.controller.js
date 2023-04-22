@@ -14,6 +14,7 @@ router.get('/:id', authorize(), getById);
 router.put('/:id', authorize(), updateSchema, update);
 router.delete('/:id', authorize(), _delete);
 
+
 module.exports = router;
 
 function authenticateSchema(req, res, next) {
@@ -45,6 +46,7 @@ function register(req, res, next) {
         .then(() => res.json({ message: 'Registration successful' }))
         .catch(next);
 }
+
 
 function getAll(req, res, next) {
     userService.getAll()
